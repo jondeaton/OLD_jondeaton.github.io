@@ -1,91 +1,199 @@
 <!DOCTYPE html>
 <html>
+<title>Jon Deaton</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+  html,body,h1,h2,h3,h4,h5,h6 {font-family: "Helvetica", sans-serif}
+</style>
+<body class="w3-light-grey">
 
-<head>
-  <title>Palace - Practice Memory</title>
-  <meta charset="utf-8"/>
-  <link rel="stylesheet" type="text/css" href="main.css"/>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-  <script src="app.js"></script>
-</head>
+<!-- Page Container -->
+<div class="w3-content w3-margin-top" style="max-width:1400px;">
 
-<body>
-  
-  <section class="jumbotron">
-    <div class="container">
-      <div class="row text-center">
-        <h2>Jon Deaton</h2>
-      </div>
+  <!-- The Grid -->
+  <div class="w3-row-padding">
+
+    <!-- Left Column -->
+    <div class="w3-third">
+
+      <div class="w3-white w3-text-grey w3-card-4">
+        <div class="w3-display-container">
+          <img src="images/skating.png" style="width:100%" alt="Headshot">
+          <div class="w3-display-bottomleft w3-container w3-text-white">
+            <h2>Jon Deaton</h2>
+          </div>
+        </div>
+        <div class="w3-container">
+          <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-orange"></i>Student</p>
+          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-orange"></i>Stanford, CA</p>
+          <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-orange"></i>jdeaton@stanford.edu</p>
+          <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-orange"></i>(413) 531-1568</p>
+          <hr>
+
+          <p>Hello, my name is Jon Deaton. This is my personal website where you can find information about me
+            and some of the work, school, and projects that I have been a part of.</p>
+
+          <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-orange"></i>Skills</b></p>
+          <p>Python Programming</p>
+          <div class="w3-light-grey w3-round-xlarge w3-small">
+            <div class="w3-container w3-center w3-round-xlarge w3-orange" style="width:90%">90%</div>
+          </div>
+          <p>C/C++</p>
+          <div class="w3-light-grey w3-round-xlarge w3-small">
+            <div class="w3-container w3-center w3-round-xlarge w3-orange" style="width:80%">
+              <div class="w3-center w3-text-white">80%</div>
+            </div>
+          </div>
+          <p>DNA Sequencing</p>
+          <div class="w3-light-grey w3-round-xlarge w3-small">
+            <div class="w3-container w3-center w3-round-xlarge w3-orange" style="width:75%">75%</div>
+          </div>
+          <p>Media</p>
+          <div class="w3-light-grey w3-round-xlarge w3-small">
+            <div class="w3-container w3-center w3-round-xlarge w3-orange" style="width:50%">50%</div>
+          </div>
+          <br>
+
+          <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-orange"></i>Programming Languages</b></p>
+          <p>Python</p>
+          <div class="w3-light-grey w3-round-xlarge">
+            <div class="w3-round-xlarge w3-orange" style="height:24px;width:100%">2 Years</div>
+          </div>
+          <p>C/C++</p>
+          <div class="w3-light-grey w3-round-xlarge">
+            <div class="w3-round-xlarge w3-orange" style="height:24px;width:55%">1 Year</div>
+          </div>
+          <p>MATLAB</p>
+          <div class="w3-light-grey w3-round-xlarge">
+            <div class="w3-round-xlarge w3-orange" style="height:24px;width:25%">1 Year</div>
+          </div>
+          <br>
+        </div>
+      </div><br>
+
+      <!-- End Left Column -->
     </div>
-  </section>
 
-  <p id="p1">Hello, my name is Jon Deaton. I am a student at Stanord university studying bioengineering.</p>
+    <!-- Right Column -->
+    <div class="w3-twothird">
 
-
-  <a href="https://www.facebook.com/jon.deaton.7">
-      <img src="images/fb.png" alt="Facebook Icon" style="width:304px;height:228px;">
-  </a>
-
-  <a href="https://www.linkedin.com/in/deatonjonathan/">LinkedIn</a>
-
-  <a href="https://github.com/jondeaton">GitHub</a>
-
-  <a href="https://twitter.com/JonJonDeats">Twitter</a>
-
-  <a href="http://www.gostanford.com/roster.aspx?rp_id=4299">Stanford Men's Gymnastics</a>
-
-  <a href="https://usagym.org/pages/athletes/athleteListDetail.html?id=113855">USA Gymnastics</a>
-
-
-  <a href="resume.pdf"
-     onclick="openPdf(event, 'resume.pdf', 'newpage.html');">
-      Resume
-  </a>
-
-  <a href="thesis.pdf"
-     onclick="openPdf(event, 'thesis.pdf', 'newpage.html');">
-      Bioengineering Honors Thesis
-  </a>
-
-	<p id="name_text">I dont know your name.</p>
-	<p id="numbers_text">Numbers would go here.</p>
-
-	<form>
-		How many digits?<br>
-		<input type="text" name="number_of_numbers" value="10" id="num_digits_entry_text"><br>
-	</form>
-
-	<a class="btn btn-primary" href="#" role="button" id="name_button">Enter your name</a>
-	<a class="btn btn-primary" href="#" role="button" id="new_numbers_button">New Numbers</a>
-
-  <br><br>
-  <p id="query_response">No results.</p>
-
-  <form>
-    Generate words for a number
-    <input type="text" name="number_query" value="321" id="query_number_entry_text">
-  </form>
-
-   <a class="btn btn-primary" href="#" role=button id="query_number_button">Get words</a>
-
-
-	<div class="header">	
-		<h1>&copy; 2016 Palace</h1>
-	</div>
-
-	<!-- Footer of the page -->
-	<footer class="container">
-      <div class="row">
-        <p class="col-sm-4">&copy; 2016 Palace</p>
-        <ul class="col-sm-8">
-          <li class="col-sm-1"><img src="https://s3.amazonaws.com/codecademy-content/projects/make-a-website/lesson-4/twitter.svg"></li>
-          <li class="col-sm-1"><img src="https://s3.amazonaws.com/codecademy-content/projects/make-a-website/lesson-4/facebook.svg"></li>
-          <li class="col-sm-1"><img src="https://s3.amazonaws.com/codecademy-content/projects/make-a-website/lesson-4/instagram.svg"></li>
-          <li class="col-sm-1"><img src="https://s3.amazonaws.com/codecademy-content/projects/make-a-website/lesson-4/medium.svg"></li>
-        </ul>
+      <!------------------STORY------------------->
+      <div class="w3-container w3-card-2 w3-white w3-margin-bottom">
+        <h2 class="w3-text-grey w3-padding-16"></i>My story</h2>
+        <div class="w3-container">
+          Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt
+          hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste
+        </div>
       </div>
-    </footer>
+
+      <div class="w3-container w3-card-2 w3-white w3-margin-bottom">
+        <h2 class="w3-text-grey w3-padding-16">Projects</h2>
+
+        <! ---------- HEAT STROKE ------------>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b><a href="https://github.com/jondeaton/Heat_Stroke_Prediction">Heat Stroke Prediction</a></b></h5>
+          <h6 class="w3-text-orange"><i class="fa fa-calendar fa-fw w3-margin-right"></i>October 2016 - March 2017</h6>
+          <p>Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit
+            sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.</p>
+          <hr>
+        </div>
+
+        <! ---------- PHAMERS ------------>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b><a href="https://github.com/jondeaton/PhaMers">PhaMers – K-mer based Phage Identification Algorithm</a></b></h5>
+          <h6 class="w3-text-orange"><i class="fa fa-calendar fa-fw w3-margin-right"></i>September 2015 - March 2017</h6>
+          <p>Consectetur adipisicing elit. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit
+            sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.</p>
+          <hr>
+        </div>
+
+        <! ---------- FERMENTOR ------------>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b><a href="https://github.com/jondeaton/Remote-Access-Fermentor">Remote Access E.Coli Fermentor</a></b></h5>
+          <h6 class="w3-text-orange"><i class="fa fa-calendar fa-fw w3-margin-right"></i>January 2016 - March 2016</h6>
+
+          <nav>
+          <img src="https://cloud.githubusercontent.com/assets/15920014/21084278/f5b6ecea-bfb5-11e6-83c0-b4133df59a77.png" height="50" width="50">
+          </nav>
+
+          <!--<div class="w3-twothird">-->
+            <p>Consectetur adipisicing elit. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit
+            sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.
+            </p>
+          <!--</div>-->
+
+          <hr>
+        </div>
+
+        <! -------------- SYNTHETIC BIOLOGY------------>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b><a href="https://github.com/jondeaton/Remote-Access-Fermentor">Biologic Glutathione Sensor</a></b></h5>
+          <h6 class="w3-text-orange"><i class="fa fa-calendar fa-fw w3-margin-right"></i>October 2014 - December 2014</h6>
+          <p>Consectetur adipisicing elit. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit
+            sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.</p>
+          <hr>
+        </div>
+
+
+      </div>
+
+
+      <!-----------WORK------------->
+      <div class="w3-container w3-card-2 w3-white w3-margin-bottom">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-orange"></i>Work Experience</h2>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>Bioengineering Lab Researcher / Quake Lab, Stanford University</b></h5>
+          <h6 class="w3-text-orange"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Jan 2015 - <span class="w3-tag w3-orange w3-round">Current</span></h6>
+          <p>Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.</p>
+          <hr>
+        </div>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>Research Associate Intern, Illumina, San Diego CA</b></h5>
+          <h6 class="w3-text-orange"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Mar 2012 - Dec 2014</h6>
+          <p>Consectetur adipisicing elit. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.</p>
+          <hr>
+        </div>
+      </div>
+
+      <!-----------SCHOOL------------->
+      <div class="w3-container w3-card-2 w3-white">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-orange"></i>Education</h2>
+        <div class="w3-container">
+
+          <h5 class="w3-opacity"><b><a href="http://www.stanford.edu/"><img src="images/stanford.png" height="50" width="30"></a><div>Stanford University</div></d></b></h5>
+          <h6 class="w3-text-orange"><i class="fa fa-calendar fa-fw w3-margin-right"></i>September 2012 - <span class="w3-tag w3-orange w3-round">Current</span></h6>
+          <p>I studied bioengineering at Stanford.</p>
+          <hr>
+
+          <h5 class="w3-opacity"><b><a href="http://www.williston.com/"><img src="images/williston.jpg" width="30" height="30" alt="Williston Logo"></a>Williston Northampton School</b></h5>
+          <h6 class="w3-text-orange"><i class="fa fa-calendar fa-fw w3-margin-right"></i>September 2008 - May 2012</span></h6>
+          <p>I studied bioengineering at Stanford.</p>
+          <hr>
+
+        </div>
+      </div>
+
+      <!-- End Right Column -->
+    </div>
+
+    <!-- End Grid -->
+  </div>
+
+  <!-- End Page Container -->
+</div>
+
+<footer class="w3-container w3-orange w3-center w3-margin-top">
+  <p>Find me on social media!</p>
+  <a href="https://www.facebook.com/jon.deaton.7"><i class="fa fa-facebook-official w3-hover-text-indigo w3-large"></i></a>
+  <a href="https://github.com/jondeaton"><i class="fa fa-github w3-hover-text-light-orange w3-large"></i></a>
+  <a href="https://www.linkedin.com/in/deatonjonathan/"><i class="fa fa-linkedin w3-hover-text-indigo w3-large"></i></a>
+  <a href="https://www.instagram.com/deat5/?hl=en"><i class="fa fa-instagram w3-hover-text-purple w3-large"></i></a>
+  <a href="https://twitter.com/JonJonDeats"><i class="fa fa-twitter w3-hover-text-light-orange w3-large"></i></a>
+</footer>
 
 </body>
 </html>

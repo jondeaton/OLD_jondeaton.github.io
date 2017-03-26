@@ -2,6 +2,11 @@
 <html>
 <title>Jon Deaton</title>
 
+<!--JavaScript Specification-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="app.js"></script>
+
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
@@ -10,8 +15,16 @@
 <link rel="stylesheet" href="main.css">
 <body class="w3-light-grey">
 
+<ul>
+    <li><a href="default.asp">Home</a></li>
+    <li><a href="news.asp">News</a></li>
+    <li><a href="contact.asp">Contact</a></li>
+    <li><a href="about.asp">About</a></li>
+</ul>
+
 <!-- Page Container -->
 <div class="w3-content w3-margin-top" style="max-width:1400px;">
+
 
   <!-- The Grid -->
   <div class="w3-row-padding">
@@ -83,10 +96,16 @@
 
       <!------------------STORY------------------->
       <div class="w3-container w3-card-2 w3-white w3-margin-bottom">
-        <h2 class="w3-text-grey w3-padding-16"></i>My story</h2>
+        <h2 class="w3-text-grey w3-padding-16"></i></h2>
         <div class="w3-container">
-          Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt
-          hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste
+          This page is home to information about me and
+
+          <br>
+          <a href="documents/resume.pdf">Resume</a>
+          <br>
+          <a href="documents/thesis.pdf">Undergraduate Honors Thesis in Bioengineering</a>
+          <br>
+
         </div>
       </div>
 
@@ -95,9 +114,13 @@
 
         <! ---------- HEAT STROKE ------------>
         <div class="w3-container">
+            <a href="https://github.com/jondeaton/Heat_Stroke_Prediction" target="_blank">
+                <img class="right" src="documents/heat_stroke/diagram.png" height="100" width="400">
+            </a>
           <h5 class="w3-opacity"><b><a href="https://github.com/jondeaton/Heat_Stroke_Prediction">Heat Stroke Prediction</a></b></h5>
           <h6 class="w3-text-orange"><i class="fa fa-calendar fa-fw w3-margin-right"></i>October 2016 - March 2017</h6>
-          <p>Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit
+
+            <p>Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit
             sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.
 
             You can view more information about this project at these locations:
@@ -120,6 +143,11 @@
         <div class="w3-container">
           <h5 class="w3-opacity"><b><a href="https://github.com/jondeaton/PhaMers">PhaMers – K-mer based Phage Identification Algorithm</a></b></h5>
           <h6 class="w3-text-orange"><i class="fa fa-calendar fa-fw w3-margin-right"></i>September 2015 - March 2017</h6>
+
+          <a href="https://github.com/jondeaton/PhaMers" target="_blank">
+            <img class="left" src="documents/phamers_diagram.png" height="200" width="400">
+          </a>
+
           <p>Consectetur adipisicing elit. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit
             sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.Consectetur adipisicing
             elit. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit
@@ -130,6 +158,10 @@
             sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.Consectetur adipisicing elit.
             Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit
             sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.</p>
+
+
+
+
           <hr>
         </div>
 
@@ -141,19 +173,13 @@
           <h5 class="w3-opacity"><b><a href="https://github.com/jondeaton/Remote-Access-Fermentor">Remote Access E.Coli Fermentor</a></b></h5>
           <h6 class="w3-text-orange"><i class="fa fa-calendar fa-fw w3-margin-right"></i>January 2016 - March 2016</h6>
 
-
-
           <!--<div class="w3-twothird">-->
-            <p>Consectetur adipisicing elit. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit
-              sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.Consectetur adipisicing
-              elit. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit
-              sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.Consectetur adipisicing elit.
-              Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit
-              sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.Consectetur adipisicing elit.
-              Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit
-              sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.Consectetur adipisicing elit.
-              Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit
-              sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.
+            <p>In BIOE 123, teams of 2-3 students design and build an E. Coli fermentor. The fermentor must hold a
+              culture of 200 mL, maintain a temperature of 37 ̊C ± 1 ̊C, provide adequate aeration and agitation, and
+              display live plots of optical density for red and green light. In addition, each team conceives of an
+              original requirement, that their fermentor must also meet. My team used a Raspberry Pi to allow remote
+              monitoring and control of our fermentor via Wi-Fi. This project was presented at the 2016 Tau Beta Pi
+              Engineering Showcase at Stanford University.
             </p>
           <!--</div>-->
 
@@ -166,7 +192,7 @@
           <h6 class="w3-text-orange"><i class="fa fa-calendar fa-fw w3-margin-right"></i>October 2014 - December 2014</h6>
 
           <a href="documents/bioe_44/paper.pdf" target="_blank">
-            <img class="left" src="documents/bioe_44/sensor.jpg" height="300" width="500">
+            <img class="left" src="documents/bioe_44/sensor.jpg" height="200" width="400">
           </a>
 
           <p>In Bioe 44: Fundamentals for Engineering Biology Lab, my team developed a biologic sensor of glutathione.
@@ -175,20 +201,13 @@
             <a href="documents/bioe_44/paper.pdf" target="_blank">Final paper</a>
           </p>
         </div>
-
+        <hr>
         <!--------------- OTHER PROJECTS ----------------->
         <div class="w3-container">
-          <h5 class="w3-opacity"><b>Other Proejcts</b></h5>
-
-          <a href="documents/bioe_44/paper.pdf" target="_blank">
-            <img class="left" src="documents/bioe_44/sensor.jpg" height="300" width="500">
-          </a>
-
-          <p>In Bioe 44: Fundamentals for Engineering Biology Lab, my team developed a biologic sensor of glutathione.
-            Our sensor was a DNA plasmid encoding a protein that would sense glutathione and actuate by triggering
-            the synthesis of GFP. Our sensor was engineered to function in HeLa cells.
-            <a href="documents/bioe_44/paper.pdf" target="_blank">Final paper</a>
-          </p>
+          <h5 class="w3-opacity"><b>Other Projects</b></h5>
+            <a href="documents/other_projects/2015_REU.pdf" target="_blank">Mitochondrial Copy Count</a>
+            <br>
+            <a href="documents/other_projects/2014_REU.pdf" target="_blank">Explorations in Bacteriology Using Microfluidics</a>
         </div>
 
         <hr>

@@ -36,8 +36,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
-              <caret line="309" column="73" lean-forward="false" selection-start-line="309" selection-start-column="73" selection-end-line="309" selection-end-column="73" />
+            <state relative-caret-position="515">
+              <caret line="428" column="58" lean-forward="false" selection-start-line="428" selection-start-column="58" selection-end-line="428" selection-end-column="58" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -108,7 +108,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="104" />
     <option name="y" value="23" />
-    <option name="width" value="1126" />
+    <option name="width" value="1153" />
     <option name="height" value="724" />
   </component>
   <component name="ProjectView">
@@ -254,12 +254,12 @@
       <workItem from="1490560883887" duration="21000" />
       <workItem from="1490560948532" duration="46000" />
       <workItem from="1490561008510" duration="7161000" />
-      <workItem from="1490649869089" duration="6409000" />
+      <workItem from="1490649869089" duration="7091000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33912000" />
+    <option name="totallyTimeSpent" value="34594000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -271,10 +271,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="104" y="23" width="1126" height="724" extended-state="0" />
+    <frame x="104" y="23" width="1153" height="724" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11634103" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11361665" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -578,8 +578,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="309" column="73" lean-forward="false" selection-start-line="309" selection-start-column="73" selection-end-line="309" selection-end-column="73" />
+        <state relative-caret-position="515">
+          <caret line="428" column="58" lean-forward="false" selection-start-line="428" selection-start-column="58" selection-end-line="428" selection-end-column="58" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />

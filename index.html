@@ -168,7 +168,8 @@
                     <h5 class="w3-opacity"><b><a href="https://github.com/jondeaton/Remote-Access-Fermentor">Remote Access E.Coli Fermentor</a></b></h5>
                     <h6 class="w3-text-orange"><i class="fa fa-calendar fa-fw w3-margin-right"></i>January 2016 - March 2016</h6>
 
-                    <p>In BIOE 123, teams of 2-3 students design and build an E. Coli fermentor. The fermentor must hold a
+                    <p>
+                        In BIOE 123, teams of 2-3 students design and build an E. Coli fermentor. The fermentor must hold a
                         culture of 200 mL, maintain a temperature of 37 ̊C ± 1 ̊C, provide adequate aeration and agitation, and
                         display live plots of optical density for red and green light. In addition, each team conceives of an
                         original requirement, that their fermentor must also meet. My team used a Raspberry Pi to allow remote
@@ -176,8 +177,33 @@
                         Engineering Showcase at Stanford University.
                     </p>
 
-
                 </div>
+                <hr>
+
+                <!--Heap Allocator-->
+                <div class="w3-container" class="clearfix">
+                    <h5 class="w3-opacity"><b>Heap Allocator, CS 107 "Computer Organization and System", Final Project</b></h5>
+                    <h6 class="w3-text-orange"><i class="fa fa-calendar fa-fw w3-margin-right"></i>March 2017</h6>
+                    <p>
+                        In the final project of CS 107, we designed and implemented our own heap manager for handing
+                        out and organizing dynamically allocated memory. The main goal was to
+                        create and test our own version of the malloc/realloc/free functions typically available through
+                        stdlib for requesting dynamically allocated memory in the C/C++ programing environment.
+                        Our implementation of malloc/realloc/free had to meet benchmarks of 65% memory utilization (calcualted
+                        as the percentage of allocated space of that handed out by the page manager) and 80% throughput
+                        (as compared to the time efficiency of the standard glibc versions of these utilities)
+                        <br><br>
+                        The heap allocator that me and my partner implemented made use of a linear-log spaced explicit
+                        free list (inspired by
+                        <a href="https://www.pvk.ca/Blog/2015/06/27/linear-log-bucketing-fast-versatile-simple/">this blog</a>)
+
+                        to store blocks of memory handed back by the client with the free/realloc functions. Our implementation
+                        surpassed both benchmarks earning 76% utilization of the heap and 97% throughput. Though
+                        code for this project cannot be shared publicly since this project is repeated for each offering
+                        of the course, you may contact me to see the code for this project.
+                    </p>
+                </div>
+
                 <hr>
 
                 <!--SYNTHETIC BIOLOGY-->
@@ -189,7 +215,8 @@
                         <img class="left" src="documents/bioe_44/sensor.jpg" height="200" width="400">
                     </a>
 
-                    <p>In Bioe 44: Fundamentals for Engineering Biology Lab, my team developed a biologic sensor of glutathione.
+                    <p>
+                        In Bioe 44: Fundamentals for Engineering Biology Lab, my team developed a biologic sensor of glutathione.
                         Our sensor was a DNA plasmid encoding a protein that would sense glutathione and actuate by triggering
                         the synthesis of GFP. Our sensor was engineered to function in HeLa cells.
                         <a href="documents/bioe_44/paper.pdf" target="_blank">Final paper</a>

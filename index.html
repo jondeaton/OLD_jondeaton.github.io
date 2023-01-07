@@ -1,610 +1,271 @@
-<!DOCTYPE html>
-<html>
-<title>Jon Deaton</title>
+---
+layout: default
+title: Home
+---
+<!-- ========== BIO ========== -->
+<div class="docs-section" id="bio">
+  <h4>Bio</h4>
+  <p>
+  My research develops tools for analyzing <b>large-scale social data</b>, aiming to provide a better understanding of <b>social structure and behaviors</b> online while also impacting the <b>design of digital social systems</b>. 
+  My recent work has focused on reducing political polarization online 
+  [<a href="assets/publications/2022_newsbridge/paper.pdf" target="_blank">ICWSM'22a</a>,
+  <a href="assets/publications/2022_flipfeed/paper.pdf" target="_blank">ICWSM'22b</a>,
+  <a href="assets/publications/2021_balanced_inf_max/paper.pdf" target="_blank">WSDM'21</a>,
+  <a href="assets/publications/2018_social_mirror/paper.pdf" target="_blank">WWW'18</a>],
+  improving the health of online conversations 
+  [<a href="assets/publications/2021_dtox/paper.pdf" target="_blank">WWW'21</a>, 
+  <a href="assets/publications/2021_social_catalysts/paper.pdf" target="_blank">CSCW'21</a>], 
+  and causal inference in social systems 
+  [<a href="assets/publications/2017_detecting_network_effects/paper.pdf" target="_blank">KDD'17</a>
+  <a href="assets/publications/2019_biometrika/paper.pdf" target="_blank">Biometrika'19</a>]. 
+  My research often falls at the intersections of Social Networks, Machine Learning, and Causal Inference.
+  </p>
 
-<!--JavaScript Specification-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="app.js"></script>
+  <p>
+  <b>I'm joining the University of Washington Information School as an Assistant Professor, starting September 2023.</b>
+  I am currently a Postdoc at Stanford University, mentored by <a href="https://web.stanford.edu/~jugander/" target="_blank">Johan Ugander</a>.
+  I received my Ph.D. from MIT in 2020 under the supervision of Deb Roy. 
+  Before coming to MIT, I spent one year in Paris and one year in Barcelona doing a M.Sc. in Data mining and Knowledge Management. 
+  I got my B.Sc. from Staffordshire University with First Class honors in Computer Science. 
+  Throughout my graduate studies, I spent several summers doing internships in industry, including Yahoo! Labs, Amazon, LinkedIn, and Facebook.
+  </p> 
+</div>
+
+<div class="docs-section" id="prospective-students">  
+  <h4>Prospective Students</h4>
+  <p>
+  <b>I'm recruiting PhD students to start Fall 2023 at the University of Washington! </b>
+  I'm especially looking for students with a background and/or interest in <i>social network analysis, machine learning, causal inference, or natural language processing</i>, and are passionate about using computational methods to study how online social platforms can be reimagined to <i>enable better conversations, bridge political divides, and reduce the spread of misinformation</i>. 
+  If you are interested, please apply to the UW iSchool <a href="https://ischool.uw.edu/programs/phd/admissions" target="_blank">PhD program</a> and mention me in your application.
+  If you have any questions, feel free to reach out by email!
+  </p> 
+</div>
 
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
-<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="main.css">
-<body class="w3-light-grey">
+<!-- ========== PUBLICATIONS ========== -->
+<div class="docs-section" id="publications">
+  <h4>Publications</h4>
 
-<!-- Page Container -->
-<div class="w3-content w3-margin-top" style="max-width:1400px;">
+  <p>Most recent publications on <a href="{{ site.data.main_info.google_scholar }}" target="_blank">Google Scholar</a>.<br/>
+  <sup>‡</sup> indicates equal contribution.
+  </p>
 
-    <!-- The Grid -->
-    <div class="w3-row-padding">
+  <ul class="tab-nav">
+    <li><div class="button active" data-ref="#papers-selected">Selected</div></li>
+    <li><div class="button" data-ref="#papers-all">All</div></li>
+  </ul>
 
-        <!-- Left Column -->
-        <div class="w3-third">
+  <div class="tab-content">
+    <div class="tab-pane active" id="papers-selected">
+      {% assign selected_papers = site.data.publications.papers | where: "selected", "y" %}
+      {% for paper in selected_papers %}
+        <div class="paper">
+          <p class="title"><b>{{ paper.title }}</b></p>
+          <p>{{ paper.authors }}</p>
+          <p><i>{{ paper.venue }}</i></p>
+           <div class="paper-buttons">
+            {% if paper.paper_pdf %}
+              <a class="button" href="{{ paper.paper_pdf | prepend: site.baseurl }}" target="_blank">Paper</a>
+            {% endif %}
 
-            <div class="w3-white w3-text-grey w3-card-4">
-                <div class="w3-display-container">
-                    <img src="images/heatshot.jpg" style="width:100%" alt="Headshot">
-                    <div class="w3-display-bottomleft w3-container w3-text-white">
-                        <h2>Jon Deaton</h2>
-                    </div>
-                </div>
-                <div class="w3-container">
-                    <p>
-                        Hello, my name is Jon Deaton. This is my personal website where you can find information about me
-                        and some of the work, school, and projects that I have been a part of.
-                        <br><br>
-                        I am originally from Longmeadow, MA, and I was a competitive gymnast for 15 years. I did my
-                        undergraduate studies at Stanford University in Bioengineering. At Stanford I also completed
-                        premedical requirements with the intent of attending medical school and practicing medicine
-                        as a physician. Through my study of bioengineering, I came to understand that through
-                        that through engineering I could create larger impact on the fields of medicine and biology
-                        than I could as a physician. I now aspire to use the combination of bioengineering and
-                        computer science to advance biomedical engineering research.
-                    </p>
+            {% if paper.slides %}
+              <a class="button" href="{{ paper.slides | prepend: site.baseurl }}" target="_blank">Slides</a>
+            {% endif %}
 
-                    <hr>
-                    <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-orange"></i>Student</p>
-                    <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-orange"></i>Stanford, CA</p>
-                    <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-orange"></i>jdeaton@stanford.edu</p>
-                    <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-orange"></i>(413) 531-1568</p>
-                    <hr>
+            {% if paper.poster %}
+              <a class="button" href="{{ paper.poster | prepend: site.baseurl }}" target="_blank">Poster</a>
+            {% endif %}
 
-                    <a href="documents/resume.pdf" target="_blank">Resume</a>
-                    <br>
-                    <a href="documents/thesis.pdf" target="_blank">Honors Thesis in Bioengineering</a>
-                    <hr>
+            {% if paper.video %}
+              <a class="button" href="{{ paper.video }}" target="_blank">Video</a>
+            {% endif %}
 
-                    <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-orange"></i>Links Elsewhere</b></p>
-                    <a href="https://jondeaton.github.io/#">Home</a> <hr>
-                    <a href="https://www.linkedin.com/in/deatonjonathan/">LinkedIn</a><hr>
-                    <a href="https://github.com/jondeaton">GitHub</a><hr>
-                    <a href="https://www.researchgate.net/profile/Jon_Deaton">ResearchGate</a><hr>
-                    <a href="https://www.facebook.com/jon.deaton.7">Facebook</a><hr>
-                    <a href="https://www.youtube.com/user/jony7779">Youtube</a><hr>
-                    <a href="https://plus.google.com/+JonDeaton">Google+</a><hr>
+            {% if paper.code %}
+              <a class="button" href="{{ paper.code }}" target="_blank">Code</a>
+            {% endif %}
 
-                    <p class="w3-large w3-text-theme"><b>Skills</b></p>
-                    <p>
-                        Python, C/C++, MATLAB, Java, Molecular Biology, NGS DNA Sequencing, Circuit Design,
-                        Linux/UNIX, Statistics, 3D Printing, OnShape CAD, Microfluidics Fabrication,
-                        Cell Culture, Bioinformatics, DNA quantification
-                    </p>
+            {% if paper.data %}
+              <a class="button" href="{{ paper.data }}" target="_blank">Data</a>
+            {% endif %}
 
-                </div>
-            </div><br>
-
-            <!-- End Left Column -->
+          </div>
         </div>
-
-        <!-- Right Column -->
-        <div class="w3-twothird">
-
-
-            <div class="w3-container w3-card-2 w3-white w3-margin-bottom">
-                <h2 class="w3-text-grey w3-padding-16">Projects</h2>
-
-                <!--Lisp Interpreter-->
-                <div class="w3-container">
-
-                    <h5 class="w3-opacity"><b><a href="https://github.com/jondeaton/Lisp">Lisp Interpreter in C</a></b></h5>
-                    <h6 class="w3-text-orange"><i class="fa fa-calendar fa-fw w3-margin-right"></i>August 2017 - August 2018</h6>
-                    <a href="https://github.com/jondeaton/Lisp" target="_blank">
-                        <img class="right" style="width:50%" src="images/Lisp.png">
-                    </a>
-
-                    <p>
-                        As a personal project I implemented an interpreter for the Lisp programming language in pure C.
-                        The interpreter can be used to run Lisp programs saved in files, or from an interactive shell. This Lisp interpreter showcases many features including variable and function declaration, arithmetic operations, first class/lambda functions, closures, curying, recursive functions, a mutable global interpreter environment, dynamic scoping, memory allocation and automatic/deterministic memory management without garbage collection.
-                    </p>
-
-                    <br>
-                    You can get the source code for this repository on GitHub. 
-                    <br>
-                    <a href="https://github.com/jondeaton/Lisp">GitHub Source</a>
-                    <hr>
-                </div>
-
-                <!--HEAT STROKE-->
-                <div class="w3-container">
-
-                    <h5 class="w3-opacity"><b><a href="https://github.com/jondeaton/Heat_Stroke_Prediction">Heat Stroke Prediction</a></b></h5>
-                    <h6 class="w3-text-orange"><i class="fa fa-calendar fa-fw w3-margin-right"></i>October 2016 - March 2017</h6>
-                    <a href="https://github.com/jondeaton/Heat_Stroke_Prediction" target="_blank">
-                        <img class="right" style="width:75%" src="documents/heat_stroke/diagram.png">
-                    </a>
-
-                    <p>
-                        Heat stroke kills thousands of people annually across the globe. The 2015 Indian heat wave,
-                        for example, resulted in over 2,300 deaths over a two-month period. To address the need for
-                        personalized heat stroke prevention in India, we created an inexpensive wearable device
-                        that measures physiological and environmental
-                        parameters and uses machine learning to determine and inform the user of heat stroke risk via
-                        text message or cell phone application in real time. Our approach is novel because
-                        we are using heat stroke patient data from literature to inform our algorithms and are
-                        determining the parameters most indicative of heat stroke. We have developed a prediction
-                        algorithm and are assembling relevant sensors and transmitting data. We implemented and tested
-                        our system in high-risk
-                        environments to assess accuracy by obtaining sensitivity, specificity, accuracy, and positive
-                        predictive value for our algorithm. We crated proof-of-concept prototypes to
-                        demonstrate viability of a heat stroke prediction device. Future versions would
-                        leverage decreasing costs for wearable sensors with bluetooth capability.
-                    </p>
-
-                    <br>
-                    You can view more information about this project here:
-                    <br>
-
-                    <a href="documents/heat_stroke/one_pager.pdf" target="_blank">One page description</a>
-                    <br>
-                    <a href="documents/heat_stroke/poster.pdf" target="_blank">Final Poster</a>
-                    <br>
-                    <a href="https://github.com/jondeaton/Heat_Stroke_Prediction">GitHub Source</a>
-
-
-                    <hr>
-                </div>
-
-                <!--PHAMERS-->
-                <div class="w3-container">
-                    <h5 class="w3-opacity"><b><a href="https://github.com/jondeaton/PhaMers">PhaMers – K-mer based Phage Identification Algorithm</a></b></h5>
-                    <h6 class="w3-text-orange"><i class="fa fa-calendar fa-fw w3-margin-right"></i>September 2015 - March 2017</h6>
-                    <a href="https://github.com/jondeaton/PhaMers" target="_blank">
-                        <img class="left" style="width:75%" src="documents/phamers_diagram.png">
-                    </a>
-                    <p>
-                        Discovering novel phage sequences from metagenomic data is often challenging. This study
-                        presents PhaMers (Phage k-Mers), a phage identification tool that uses supervised learning to
-                        identify metagenomic sequences (contigs) as phage or non-phage on the basis of tetranucleotide
-                        frequencies. PhaMers compares the tetranucleotide frequencies of metagenomic contigs to those
-                        of phage and bacteria reference genomes from online databases. Using PhaMers, we identified
-                        103 novel phage sequences in hot spring samples from Yellowstone National Park. We applied a
-                        microfluidic-based mini-metagenomic approach to sequence environmental samples and
-                        produce metagenomic sequence datasets. We analyzed assembled contigs using PhaMers and
-                        VirSorter, a publicly available phage identification and annotation pipeline. We present the
-                        performance of PhaMers in identifying genomic fragments of phages and its ability to predict
-                        phage taxonomic classification. We also present putative hosts and taxa for some novel phage
-                        sequences.
-                    </p>
-
-                    <br>
-                    You can learn more about this project here:
-                    <br>
-                    <a href="documents/SURPS_poster.pdf" target="_blank">Poster</a>
-                    <br>
-                    <a href="documents/thesis.pdf" target="_blank">Honors Thesis</a>
-                    <br>
-                    <a href="https://github.com/jondeaton/PhaMers">GitHub Source</a>
-                </div>
-
-                <hr>
-
-                <!--FERMENTOR-->
-                <div class="w3-container" class="clearfix">
-                    <nav>
-                        <img class="right" src="https://cloud.githubusercontent.com/assets/15920014/21084278/f5b6ecea-bfb5-11e6-83c0-b4133df59a77.png" height="400" width="350">
-                    </nav>
-                    <h5 class="w3-opacity"><b><a href="https://github.com/jondeaton/Remote-Access-Fermentor">Remote Access E.Coli Fermentor</a></b></h5>
-                    <h6 class="w3-text-orange"><i class="fa fa-calendar fa-fw w3-margin-right"></i>January 2016 - March 2016</h6>
-
-                    <p>
-                        In BIOE 123, teams of 2-3 students design and build an E. Coli fermentor. The fermentor must hold a
-                        culture of 200 mL, maintain a temperature of 37 ̊C ± 1 ̊C, provide adequate aeration and agitation, and
-                        display live plots of optical density for red and green light. In addition, each team conceives of an
-                        original requirement, that their fermentor must also meet. My team used a Raspberry Pi to allow remote
-                        monitoring and control of our fermentor via Wi-Fi. This project was presented at the 2016 Tau Beta Pi
-                        Engineering Showcase at Stanford University.
-                    </p>
-
-                </div>
-                <hr>
-
-                <!--Heap Allocator-->
-                <div class="w3-container" class="clearfix">
-                    <h5 class="w3-opacity"><b>Heap Allocator, CS 107 "Computer Organization and Systems", Final Project</b></h5>
-                    <h6 class="w3-text-orange"><i class="fa fa-calendar fa-fw w3-margin-right"></i>March 2017</h6>
-                    <p>
-                        In the final project of CS 107, we designed and implemented our own heap manager for handing
-                        out and organizing dynamically allocated memory. The main goal was to
-                        create and test our own version of the malloc/realloc/free functions typically available through
-                        stdlib for requesting dynamically allocated memory in the C/C++ programing environment.
-                        Our implementation of malloc/realloc/free had to meet benchmarks of 65% memory utilization (calcualted
-                        as the percentage of allocated space of that handed out by the page manager) and 80% throughput
-                        (as compared to the time efficiency of the standard glibc versions of these utilities)
-                        <br><br>
-                        The heap allocator that me and my partner implemented made use of a linear-log spaced explicit
-                        free list (inspired by
-                        <a href="https://www.pvk.ca/Blog/2015/06/27/linear-log-bucketing-fast-versatile-simple/">this blog</a>)
-
-                        to store blocks of memory handed back by the client with the free/realloc functions. Our implementation
-                        surpassed both benchmarks earning 76% utilization of the heap and 97% throughput. Though
-                        code for this project cannot be shared publicly since this project is repeated for each offering
-                        of the course, you may contact me to see the code for this project.
-                    </p>
-                </div>
-
-                <hr>
-
-                <!--SYNTHETIC BIOLOGY-->
-                <div class="w3-container">
-                    <h5 class="w3-opacity"><b><a href="documents/bioe_44/paper.pdf" target="_blank">Biologic Glutathione Sensor</a></b></h5>
-                    <h6 class="w3-text-orange"><i class="fa fa-calendar fa-fw w3-margin-right"></i>October 2014 - December 2014</h6>
-
-                    <a href="documents/bioe_44/paper.pdf" target="_blank">
-                        <img class="left" src="documents/bioe_44/sensor.jpg" height="200" width="400">
-                    </a>
-
-                    <p>
-                        In Bioe 44: "Fundamentals for Engineering Biology Lab", my team developed a biologic sensor of glutathione.
-                        Our sensor was a DNA plasmid encoding a protein that would sense glutathione and actuate by triggering
-                        the synthesis of GFP. Our sensor was engineered to function in HeLa cells.
-                        <a href="documents/bioe_44/paper.pdf" target="_blank">Final paper</a>
-                    </p>
-                </div>
-                <hr>
-
-                <!--OTHER PROJECTS-->
-                <div class="w3-container">
-                    <h5 class="w3-opacity"><b>Other Projects</b></h5>
-                    Quake Lab 2015: <a href="documents/other_projects/2015_REU.pdf" target="_blank">Single-Cell Mitochondrial Copy Count Distribution in Cancer Cells</a>
-                    <br>
-                    Quake Lab 2014: <a href="documents/other_projects/2014_REU.pdf" target="_blank">Explorations in Bacteriology Using Microfluidics</a>
-                </div>
-
-                <hr>
-            </div>
-
-            
-            <!-- WORK -->
-			 <div class="w3-container w3-card-2 w3-white w3-margin-bottom">
-                <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-orange"></i>Work Experience</h2>
-
-
-            <div class="w3-container">
-                    <h5 class="w3-opacity"><b>Bioinformatics Software Test Engineer, Illumina, San Diego CA</b></h5>
-                    <h6 class="w3-text-orange"><i class="fa fa-calendar fa-fw w3-margin-right"></i>June 2017 - <span class="w3-tag w3-orange w3-round">Current</span></h6>
-                    <p>
-                        I supported continuous integration pipelines through automated test development and security testing. I used C# to develop automated tests for software that controls the DNA sequencer. Tests involved monitoring communication with DNA sequencer firmware, verifying successful interaction with cloud platforms, and analyzing software logs. I also developed continuous integration tools including an internal web service for storing and viewing performance test results, using AngularJS and MongoDB.
-                    </p>
-                    <hr>
-                </div>
-
-                <!-- QUAKE LAB -->
-                <div class="w3-container">
-                    <h5 class="w3-opacity"><b>Bioengineering Lab Researcher / Quake Lab, Stanford University</b></h5>
-                    <h6 class="w3-text-orange"><i class="fa fa-calendar fa-fw w3-margin-right"></i>June 2014 - June 2017</h6>
-                    <p>
-                        In the Quake Lab I worked on molecular biology and bioinformatics projects related to DNA
-                        sequencing and characterization. In my largest project I analyzed the frequencies of short
-                        DNA "words" with machine learning algorithms to identify novel viral DNA sequences in metagenomic sequencing data.
-                        I created a software tool in Python to accomplish this (github.com/jondeaton/PhaMers) and
-                        discovered over 100 novel viral DNA sequences.
-                        <br><br>
-
-                        My molecular biology research in the Quake Lab has involved the design and debugging of novel molecular
-                        biology protocols to analyze DNA. My experiments primarily involve extraction, purification,
-                        amplification, and sequencing of RNA and DNA with and without microfluidic platforms.
-
-                    </p>
-                    <hr>
-                </div>
-
-                <!------- ILLUMINA----------->
-                <div class="w3-container">
-                    <h5 class="w3-opacity"><b>Research Associate Intern, Illumina, San Diego CA</b></h5>
-                    <h6 class="w3-text-orange"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Mar 2012 - Dec 2014</h6>
-                    <p>
-                        During my summer internship at Illumina I worked on bioengineering problems in a protein
-                        engineering group. I designed and performed experiments with the goal of optimizing
-                        library preparation protocols in human exome sequencing. I also used Python to automate data analyses of DNA
-                        sequencing. These analysis tools are used to assess DNA sequencing run performance and inform
-                        researchers about how changes to sequencing reaction conditions affect outcome data quality.
-                    </p>
-                    <hr>
-                </div>
-
-                <!------- Peninsula Tutoring ----------->
-                <div class="w3-container">
-                    <h5 class="w3-opacity"><b>Tutor, Peninsula Tutoring, San Francisco Bay Area, CA</b></h5>
-                    <h6 class="w3-text-orange"><i class="fa fa-calendar fa-fw w3-margin-right"></i>November 2015 - June 2015</h6>
-                    <p>
-                        While working with Peninsula Tutoring I tutored high school and middle school students
-                        in math and science.
-                    </p>
-                    <hr>
-                </div>
-
-                <!--Gymnatics Camp Coach-->
-                <div class="w3-container">
-                    <h5 class="w3-opacity"><b>Gymnastics Camp Coach, Stanford Boy's Gymnastics, Stanford, CA</b></h5>
-                    <h6 class="w3-text-orange"><i class="fa fa-calendar fa-fw w3-margin-right"></i>June 2013</h6>
-                    <p>
-                        I coached intermediate level gymnasts at a week long gymnastics summer camp.
-                    </p>
-                    <hr>
-                </div>
-
-                <!--Boy's and Girl's Club-->
-                <div class="w3-container">
-                    <h5 class="w3-opacity"><b>Camp Counselor, Springfield Boy’s and Girl’s Club, Springfield MA</b></h5>
-                    <h6 class="w3-text-orange"><i class="fa fa-calendar fa-fw w3-margin-right"></i>June 2009 - September 2010</h6>
-                    <p>
-                        I taught underprivileged elementary school students in summer educational program. This
-                        program was designed to help students struggling with challenges outside of school
-                        keep up academically with their peers.
-                    </p>
-                </div>
-            </div>
-
-            <!-----------SCHOOL------------->
-            <div class="w3-container w3-card-2 w3-white w3-margin-bottom">
-                <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-orange"></i>Education</h2>
-                <div class="w3-container">
-
-                    <h5 class="w3-opacity"><b><a href="http://www.stanford.edu/">
-                        <img src="images/stanford.png" height="50" width="30"></a>
-                        MS in Computer Science - Stanford University, Stanford, CA</d></b></h5>
-                    <h6 class="w3-text-orange"><i class="fa fa-calendar fa-fw w3-margin-right"></i>September 2017 - <span class="w3-tag w3-orange w3-round">Current</span></h6>
-                    <p>
-                        I study computer science as a master's student at Stanford, focusing on Artificial Intelligence.
-                        My coursework has included the study of probabalistic graphical modeling, algorithmis analysis,
-                        operating systems and systems programming, deep learning, machine learning, and cryptography.
-                    </p>
-                    <hr>
-
-                    <h5 class="w3-opacity"><b><a href="http://www.stanford.edu/">
-                        <img src="images/stanford.png" height="50" width="30"></a>
-                        BSH in Bioengineering - Stanford University, Stanford, CA</d></b></h5>
-                    <h6 class="w3-text-orange"><i class="fa fa-calendar fa-fw w3-margin-right"></i>September 2012 - December 2017</h6>
-                    <p>
-                        As an undergraduate I studied bioengineering and also completed premedical requirements. I took
-                        5 years to gradaute as an undergraduate due to the large number of classes required for bioengineering
-                        and premedicine that conflicted with practice times for gymnatics. In my study of bioengineering
-                        I focused on the intersection of computer science and the biological sciences. Not only did I
-                        take several computer science classes, but also my honors thesis and senior capstone projects
-                        focused on the application of machine learning to solve biological and medical problems.
-                    </p>
-                    <hr>
-
-                    <h5 class="w3-opacity"><b><a href="http://www.williston.com/">
-                        <img src="images/williston.jpg" width="30" height="30" alt="Williston Logo"></a>
-                        Williston Northampton School, Easthampton MA</b></h5>
-                    <h6 class="w3-text-orange"><i class="fa fa-calendar fa-fw w3-margin-right"></i>September 2008 - May 2012</span></h6>
-                    <p>
-                        I went to high school at the Williston Northampton School in Easthampton Massachusetts. The
-                        majority of my free time in hich school was spent training gymnastics intensively.
-                    </p>
-                </div>
-            </div>
-
-            <!--Publications-->
-            <div class="w3-container w3-card-2 w3-white w3-margin-bottom">
-                <h2 class="w3-text-grey w3-padding-16">
-                    <i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-orange"></i>
-                    Publications
-                </h2>
-
-                <div class="w3-container">
-                    <p>
-                        PhaMers identifies novel bacteriophage sequences from thermophilic hot springs
-			Jonathan Deaton, Feiqiao Yu, Stephen Quake
-			bioRxiv 169672; doi: https://doi.org/10.1101/169672
-                    </p>
-                </div>
-            </div>
-
-            <!--Awards-->
-            <div class="w3-container w3-card-2 w3-white w3-margin-bottom">
-                <h2 class="w3-text-grey w3-padding-16">
-                    <i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-orange"></i>
-                    Awards / Recognition
-                </h2>
-
-                <div class="w3-container">
-
-                    <h5 class="w3-opacity"><b>Tau Beta Pi National Engineering Honors Society Member</b></h5>
-                    <h6 class="w3-text-orange"><a href="https://www.tbp.org/home.cfm">Tau Beta Pi</a>: March 2017</h6>
-                    Engineering students are invited to join Tau Beta Pi if they rank among the top 20% of engineering
-                    students in their graduating class or have demonstrated exemplary integrity in engineering.
-                    <hr>
-
-
-                    <h5 class="w3-opacity"><b>NCAA First Team Academic All American</b></h5>
-                    <h6 class="w3-text-orange">NCAA Men's Gymnastics: April 2015</h6>
-                    The Academic All American awards are given to the athletes participating in the NCAA championships
-                    earning a sufficiently high cumulative GPA. First Team Academic All Americans must have GPA > 3.85.
-                    <hr>
-
-                    <h5 class="w3-opacity"><b>NCAA First Team Academic All American</b></h5>
-                    <h6 class="w3-text-orange">NCAA Men's Gymnastics: April 2014</h6>
-                    <hr>
-
-                    <h5 class="w3-opacity"><b>NCAA First Team Academic All American</b></h5>
-                    <h6 class="w3-text-orange">NCAA Men's Gymnastics: April 2013</h6>
-                    <hr>
-
-                    <h5 class="w3-opacity"><b>Lincoln D. Granniss Yale University Scholarship </b></h5>
-                    <h6 class="w3-text-orange">Williston Northampton School: May 2013</h6>
-                    <p>
-                        The Lincoln D. Granniss Yale University Scholarship is awarded a student of Williston
-                        Northampton’s upcoming senior class who is qualified academically and extracurricularly
-                        to be a strong candidate for admission to Yale University.
-                    </p>
-                    <hr>
-
-                    <h5 class="w3-opacity"><b>Dwight Church Award for the Outstanding Senior</b></h5>
-                    <h6 class="w3-text-orange">National Gymnastics Judges Association: March 2013</h6>
-                    <p>
-                        This award is given each year to the outstanding senior gymnast competing at the
-                        Region 6 championships.
-                    </p>
-
-                </div>
-            </div>
-
-
-            <div class="w3-container w3-card-2 w3-white w3-margin-bottom">
-                <h2 class="w3-text-grey w3-padding-16">
-                    Presentations
-                </h2>
-
-                <div class="w3-container">
-
-                    <h5 class="w3-opacity"><b>2017 Tau Beta Pi Engineering Showcase – Stanford University, CA</b></h5>
-                    <h6 class="w3-text-orange">April 17, 2017</h6>
-                    Topic: Heat Stroke Risk Monitor and Prediction Algorithm
-                    <hr>
-
-                    <h5 class="w3-opacity"><b>Physical Biology of the Cell Conference 2017 – Kona, Hawaii</b></h5>
-                    <h6 class="w3-text-orange">April 5, 2017</h6>
-                    Topic: PhaMers Phage Identification Algorithm and Novel Phage Characterization
-                    <hr>
-
-                    <h5 class="w3-opacity"><b>Rice 360 Global Health Engineering Competition – Rice University, TX</b></h5>
-                    <h6 class="w3-text-orange">March 24, 2017</h6>
-                    Topic: Heat Stroke Risk Monitor and Prediction Algorithm (presented by other group members)
-                    <hr>
-
-                    <h5 class="w3-opacity"><b>Quake Group Presentation – Quake Lab, Stanford University CA</b></h5>
-                    <h6 class="w3-text-orange">March 7, 2017</h6>
-                    Topic: PhaMers Phage Identification Algorithm and Novel Phage Characterization
-                    <hr>
-
-                    <h5 class="w3-opacity"><b>Boundaries of Life Meeting – California Institute of Technology, CA</b></h5>
-                    <h6 class="w3-text-orange">January 18, 2017</h6>
-                    Topic: PhaMers Phage Identification Algorithm and Novel Phage Characterization
-                    <hr>
-
-                    <h5 class="w3-opacity"><b>Stanford Undergraduate Research Symposium – Stanford University, CA</b></h5>
-                    <h6 class="w3-text-orange">October 5, 2016</h6>
-                    Topic: PhaMers Phage Identification Algorithm and Novel Phage Characterization
-                    <hr>
-
-                    <h5 class="w3-opacity"><b>iAspire Presentation – Illumina Headquarters, San Diego, CA</b></h5>
-                    <h6 class="w3-text-orange">April 7, 2016</h6>
-                    Topic: Human exome sequencing optimization and sequencing run quality assessment algorithm
-                    <hr>
-
-                    <h5 class="w3-opacity"><b>2016 Tau Beta Pi Engineering Showcase – Stanford University, CA</b></h5>
-                    <h6 class="w3-text-orange">April 7, 2016</h6>
-                    Topic: Remote Access Fermentor
-                    <hr>
-
-                    <h5 class="w3-opacity"><b>Bioengineering REU Presentation – Stanford University, CA</b></h5>
-                    <h6 class="w3-text-orange">August 2015</h6>
-                    Tpoic: Single Cell Distribution of Mitochondrial Genome Copy Count in K562 Cells
-                    <hr>
-
-                    <h5 class="w3-opacity"><b>Bioengineering REU Presentation – Stanford University, CA</b></h5>
-                    <h6 class="w3-text-orange">August 2014</h6>
-                    Topic: Cyanobacteria Genome Copy Count & Microfluidic Multiple Displace Amplification Reaction
-
-                </div>
-            </div>
-
-
-                    <!--Volunteering-->
-            <div class="w3-container w3-card-2 w3-white w3-margin-bottom">
-                <h2 class="w3-text-grey w3-padding-16">
-                    <i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-orange"></i>
-                    Volunteer Work
-                </h2>
-                <div class="w3-container">
-                    <h5 class="w3-opacity"><b>Clinical Volunteer</b></h5>
-                    <h6 class="w3-text-orange"><i class="fa fa-calendar fa-fw w3-margin-right"></i>November 2015 - June 2015</h6>
-                    <p>
-                        I volunteered in a neurology unit at the Stanford Hospital and Clinics where I helped
-                        nurses and secretaries accomplish tasks throughout the unit. I also interacted with
-                        patients and their friends and family to improve their overall experience at the hospital.
-                    </p>
-                </div>
-            </div>
-
-
-            <!--Gymnastics-->
-            <div class="w3-container w3-card-2 w3-white w3-margin-bottom">
-                <h2 class="w3-text-grey w3-padding-16">Gymnastics</h2>
-
-                <div class="w3-container">
-                    <a href="https://usagym.org/pages/athletes/athleteListDetail.html?id=113855">
-                        <h5 class="w3-opacity"><b>USA Junior National Team Member, Men's Gymnastics</b></h5>
-                    </a>
-
-                    <h6 class="w3-text-orange"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2008 - 2013</span></h6>
-
-                    <a href="https://www.youtube.com/watch?v=rHvJpavgs6s">
-                        <img class="left" src="images/usa.jpg">
-                    </a>
-
-                    <p>
-                        I was a member of the USA Junior National team for 5 years. To become a member of the national team
-                        I placed within the top seven gymnastics of my age group at national championships.
-                        Being on the national team earned me the opportunity to train at week-long training camps at
-                        the USA Olympic Training Center in Colorado Springs, CO several times a year. This opportunity
-                        also allowed me to represent the United States in three international competitions in
-                        Lilleshall in the UK, Bejjing, China (left), and Medellín, Colombia.
-                    </p>
-
-                    <iframe width="300" height="200" src="https://www.youtube.com/embed/4DO6WHEYfFo" frameborder="0" allowfullscreen></iframe>
-
-
-                </div>
-                <hr>
-
-                <!--Stanford Men's Gymnastics-->
-                <div class="w3-container">
-                    <img class="right" src="images/team.jpg">
-                    <h5 class="w3-opacity"><b><a href="http://www.gostanford.com/roster.aspx?rp_id=4299">Stanford Men's Gymnastics</a></b></h5>
-                    <h6 class="w3-text-orange"><i class="fa fa-calendar fa-fw w3-margin-right"></i>September 2012 - April 2015</span></h6>
-                    <p>
-                        During my undergraduate career at Stanford, I was a member of the Stanford Men's Gymnastics
-                        Team for four years. For Stanford's team I competed all events but rings, and helped the
-                        team to win two second place and one third place titles at the NCAA championships. Being a
-                        gymnast on the Stanford Men's Gymnastics team required 20 hours of intensive training each
-                        week in addition to weekly competitions across the country during the winter season. I was
-                        a NCAA First Team Academic All-American at the 2013, 2014, and 2015 NCAA championships, and
-                        an Elite 89 Scholar Athlete in 2014.
-
-                        <br><br>
-                        Unfortunately, during my senior year at Stanford, chronic injuries to my shoulders and ankles
-                        from 15 years of intensive gymnastics prevented me from competing. Despite this, I remained
-                        a contributing member of the team through a role as team manager.
-                    </p>
-                </div>
-                <hr>
-
-                <!--Trampoline-->
-                <h5 class="w3-opacity"><b><a href="https://www.youtube.com/user/jony7779">Trampoline</a></b></h5>
-                Of all the things I learned in gymnastics, my favorite by far was bouncing on the trampoline. I have
-                a compilation of clips on <a href="https://www.youtube.com/user/jony7779">YouTube</a> of me doing
-                trampoline and some other things.
-
-                <!--New Skill Day Video-->
-                <br><br>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/N_5mwuNql48" frameborder="0" allowfullscreen></iframe>
-                <br><br>
-            </div>
-        </div>
-
-        <!-- End Right Column -->
+      {% endfor %}
     </div>
 
-    <!-- End Grid -->
+    <div class="tab-pane" id="papers-all">
+      {% for paper in site.data.publications.papers %}
+        <div class="paper">
+          <p class="title"><b>{{ paper.title }}</b></p>
+          <p>{{ paper.authors }}</p>
+          <p><i>{{ paper.venue }}</i></p>
+           <div class="paper-buttons">
+            {% if paper.paper_pdf %}
+              <a class="button" href="{{ paper.paper_pdf | prepend: site.baseurl }}" target="_blank">Paper</a>
+            {% endif %}
+
+            {% if paper.slides %}
+              <a class="button" href="{{ paper.slides | prepend: site.baseurl }}" target="_blank">Slides</a>
+            {% endif %}
+
+            {% if paper.poster %}
+              <a class="button" href="{{ paper.poster | prepend: site.baseurl }}" target="_blank">Poster</a>
+            {% endif %}
+
+            {% if paper.video %}
+              <a class="button" href="{{ paper.video }}" target="_blank">Video</a>
+            {% endif %}
+
+            {% if paper.code %}
+              <a class="button" href="{{ paper.code }}" target="_blank">Code</a>
+            {% endif %}
+
+            {% if paper.data %}
+              <a class="button" href="{{ paper.data }}" target="_blank">Data</a>
+            {% endif %}
+
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
 </div>
 
-<!-- End Page Container -->
+<!-- ========== PROJECTS ========== 
+<div class="docs-section" id="projects">
+  <h4>Projects</h4>
+
+  <ul class="tab-nav">
+    <li><div class="button active" data-ref="#projects-selected">Selected</div></li>
+    <li><div class="button" data-ref="#projects-all">All</div></li>
+  </ul>
+
+  <div class="tab-content">
+    <div class="tab-pane active" id="projects-selected">
+      {% assign selected_projects = site.data.projects.projects | where: "selected", "y" %}
+      {% for project in selected_projects %}
+        {% assign index_modulo = forloop.index0 | modulo:3 %}
+        {% if index_modulo == 0 %}
+          <div class="row">
+        {% endif %}
+
+          <div class="four columns">
+            <div class="project-container">
+
+                <div class="project-image-container">
+                  <a href="{{ project.url }}">
+                    <img src="{{ project.thumbnail }}" class="u-max-full-width" />
+                  </a>
+                </div>
+
+                <div class="project-caption">
+                  <b>{{ project.title }}</b> <br/>
+                  {{ project.subtitle }}
+                </div>
+
+            </div>
+          </div>
+
+        {% if index_modulo == 2 %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <div class="tab-pane" id="projects-all">
+      {% for project in site.data.projects.projects %}
+        {% assign index_modulo = forloop.index0 | modulo:3 %}
+        {% if index_modulo == 0 %}
+          <div class="row">
+        {% endif %}
+
+          <div class="four columns">
+            <div class="project-container">
+
+                <div class="project-image-container">
+                  <a href="{{ project.url }}">
+                    <img src="{{ project.thumbnail }}" class="u-max-full-width" />
+                  </a>
+                </div>
+
+                <div class="project-caption">
+                  <b>{{ project.title }}</b> <br/>
+                  {{ project.subtitle }}
+                </div>
+
+            </div>
+          </div>
+
+        {% if index_modulo == 2 %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+
+</div>
+-->
+
+<!-- ========== RESUME ========== -->
+<div class="docs-section" id="resume">
+  <h4>Vitæ</h4>
+
+  <p>Full Resume in <a href={{ "/assets/cv/cv_web.pdf" | prepend: site.baseurl }} target="_blank">PDF</a>.</p>
+
+  <!-- The Timeline -->
+  <ul class="timeline">
+    {% for exp in site.data.experience.experiences %}
+    <li>
+      {% if exp.category == "work" %}
+      <div class="direction-l">
+      {% else %}
+      <div class="direction-r">
+      {% endif %}
+        <div class="flag-wrapper">
+          <span class="flag">{{ exp.place }}</span>
+          <span class="time-wrapper"><span class="time">{{ exp.time }}</span></span>
+        </div>
+        <div class="desc"><b>{{ exp.title }}</b> <br/> {{ exp.subtitle }}</div>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
 </div>
 
-<footer class="w3-container w3-orange w3-center w3-margin-top">
-    <p>Find me on social media!</p>
-    <a href="https://www.facebook.com/jon.deaton.7"><i class="fa fa-facebook-official w3-hover-text-indigo w3-large"></i></a>
-    <a href="https://github.com/jondeaton"><i class="fa fa-github w3-hover-text-light-orange w3-large"></i></a>
-    <a href="https://www.linkedin.com/in/deatonjonathan/"><i class="fa fa-linkedin w3-hover-text-indigo w3-large"></i></a>
-    <a href="https://www.instagram.com/deat5/?hl=en"><i class="fa fa-instagram w3-hover-text-purple w3-large"></i></a>
-    <a href="https://twitter.com/JonJonDeats"><i class="fa fa-twitter w3-hover-text-light-orange w3-large"></i></a>
-</footer>
 
-</body>
-</html>
+<div class="docs-section" id="template">
+    <h4>Website Design</h4>
+    Since I made this website, many people have found this Jekyll template useful
+    <a href="https://people.csail.mit.edu/davidam/" target="_blank">[1</a>,
+    <a href="https://thashim.github.io/" target="_blank">2</a>,
+    <a href="https://pauljwright.github.io/" target="_blank">3</a>,
+    <a href="https://bayesianbrad.github.io/" target="_blank">4</a>,
+    <a href="https://ahxt.github.io/" target="_blank">5</a>,
+    <a href="https://code-terminator.github.io/" target="_blank">6</a>,
+    <a href="https://dinacmistry.github.io/" target="_blank">7</a>,
+    <a href="https://stanniszhou.github.io/" target="_blank">8</a>,
+    <a href="http://binghongchen.net/" target="_blank">9</a>,
+    <a href="https://jirvin16.github.io/" target="_blank">10</a>,
+    <a href="https://mengliu1998.github.io/" target="_blank">11</a>,
+    <a href="https://amir-rahimi.github.io/" target="_blank">12</a>,
+    <a href="https://taoyds.github.io/" target="_blank">13</a>,
+    <a href="https://zhangjingtun.com/" target="_blank">14</a>,
+    <a href="https://www.saraiht.com/" target="_blank">15</a>,
+    <a href="https://tomyan555.github.io/" target="_blank">16</a>,
+    <a href="https://abhishekgrewal.github.io/" target="_blank">17</a>,
+    <a href="https://xuezhemax.github.io/" target="_blank">18</a>,
+    <a href="https://mmeendez8.github.io/" target="_blank">19</a>,
+    <a href="https://pkassraie.github.io/" target="_blank">20</a>,
+    <a href="https://ninasakhnini.dev/" target="_blank">21</a>,
+    <a href="http://www.yapengtian.com/" target="_blank">22</a>,
+    <a href="https://weijian-li.github.io/" target="_blank">23</a>,
+    <a href="https://www.seas.upenn.edu/~elenter/" target="_blank">24</a>,
+    <a href="https://cm-bf.github.io/" target="_blank">25</a>,
+    <a href="https://stuartburrell.github.io/" target="_blank">26</a>].
+    <!--<br/>-->
+    You can find all the code needed to build your website in this <a href="https://github.com/msaveski/www_personal" target="_blank">GitHub repo</a>.
+    Feel free to use it. <br/>
+
+    If you end up using it, please link to here and drop me an email.
+    I'm always happy to see people using it.
+</div>
